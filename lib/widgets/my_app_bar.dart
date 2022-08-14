@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({Key? key}) : super(key: key);
@@ -9,8 +10,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       elevation: 1,
-      title: const Center(
-        child: Text('Dribbble'),
+      title: Center(
+        child: SvgPicture.asset('assets/images/logo.svg'),
       ),
       leading: IconButton(
         onPressed: toggleMenu,

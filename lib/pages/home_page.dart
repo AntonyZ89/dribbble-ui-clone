@@ -19,8 +19,10 @@ class _Body extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
           child: Column(
-        children: [
+        children: const [
           HomeHeaderWidget(),
+          HomeContentWidget(),
+          // HomeFooterWidget(),
         ],
       )),
     );

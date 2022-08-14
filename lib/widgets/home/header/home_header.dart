@@ -12,11 +12,11 @@ class HomeHeaderWidget extends StatelessWidget {
 
     return Stack(
       children: [
+        BackgroundVideo(height: height),
         Container(
-          color: Colors.black.withOpacity(0.3),
+          color: Colors.black.withOpacity(0.6),
           height: height,
         ),
-        // BackgroundVideo(height: height),
         Container(
           padding: const EdgeInsets.symmetric(vertical: 50),
           height: height,

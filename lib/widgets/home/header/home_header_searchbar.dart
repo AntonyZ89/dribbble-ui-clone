@@ -12,7 +12,14 @@ class HomeHeaderSearchBar extends StatelessWidget {
           filled: true,
           fillColor: Colors.white,
           prefixIcon: Icon(Icons.search),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.all(
+              Radius.circular(100),
+            ),
+          ),
           hintText: 'Search...',
+          hintStyle: TextStyle(color: Colors.grey), // TODO add opacity
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/widgets/widgets.dart';
 
 class TrendingSearchList extends StatelessWidget {
   TrendingSearchList({Key? key}) : super(key: key);
@@ -12,19 +13,15 @@ class TrendingSearchList extends StatelessWidget {
       crossAxisAlignment: WrapCrossAlignment.center,
       alignment: WrapAlignment.center,
       spacing: 8,
-      runSpacing: 0,
+      runSpacing: 8,
       children: [
         const Text(
-          'Trending Searches',
+          'Trending searches',
           style: TextStyle(fontSize: 13, color: Colors.white),
         ),
         ...trendingSearches.map(
-          (String trending) => Chip(
-            shape: const StadiumBorder(side: BorderSide()),
-            label: Text(
-              trending,
-              style: const TextStyle(color: Colors.white),
-            ),
+          (String trending) => UnconstrainedBox(
+            child: Tag(text: trending, height: 30, outlined: true),
           ),
         ),
       ],
