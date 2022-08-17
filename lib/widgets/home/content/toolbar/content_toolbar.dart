@@ -29,10 +29,7 @@ class _ContentToolbarState extends State<ContentToolbar> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               DropdownList(),
-              FilterListButton(
-                onPressed: toggleList,
-                active: _opened,
-              ),
+              FilterListButton(onPressed: toggleList, active: _opened),
             ],
           ),
         ),

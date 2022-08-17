@@ -6,20 +6,14 @@ class HomeContentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: const EdgeInsets.all(10),
-      height: 500,
       child: Column(
         children: [
           const ContentToolbar(),
-          Expanded(
-            child: ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (BuildContext context, int index) => const ContentCard(),
-              separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 8),
-              itemCount: 5,
-            ),
-          )
+          const SizedBox(height: 8),
+          for (int i = 0; i < 5; i++) ...[const ContentCard(), if (i < 4) const SizedBox(height: 8)],
+          const ContentFooter()
         ],
       ),
     );
