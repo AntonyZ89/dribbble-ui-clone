@@ -13,7 +13,7 @@ class CardFooter extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(25)),
-              child: Image.network('https://via.placeholder.com/25'),
+              child: Image.asset('assets/placeholder/50x50.png'),
             ),
             const SizedBox(width: 8),
             const Text('Rylic Studio'),

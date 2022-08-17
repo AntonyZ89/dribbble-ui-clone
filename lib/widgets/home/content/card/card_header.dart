@@ -7,7 +7,7 @@ class CardHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
-      child: Image.network('https://via.placeholder.com/400x300'),
+      child: Image.asset('assets/placeholder/400x300.png'),
     );
   }
 }
