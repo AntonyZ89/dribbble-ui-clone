@@ -15,35 +15,41 @@ class HomeFooterWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SvgPicture.asset('assets/images/logo.svg', color: Colors.pink),
+            Container(
+              alignment: Alignment.centerLeft,
+              height: 40,
+              child: SvgPicture.asset('assets/images/logo.svg', color: Colors.pink, height: 26),
+            ),
             const SizedBox(height: 16),
             const Text('Dribbble is the world’s leading'),
             const Text('community for creatives to share, grow,'),
             const Text('and get hired.'),
-            const SizedBox(height: 16),
             const ListIcon(),
             ListMenu(),
-            const Divider(height: 50),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // TODO obter ano atual
-                Text(
-                  '© 2022 Dribbble. All rights reserved',
-                  style: TextStyle(color: Colors.grey.shade700),
-                ),
-                const SizedBox(height: 6),
-                SvgPicture.asset('assets/images/logo_icon.svg', width: 24, height: 24),
-                const SizedBox(height: 6),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('19,120,250', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                    const SizedBox(width: 4),
-                    Text('shots dribbbled', style: TextStyle(color: Colors.grey.shade700)),
-                  ],
-                )
-              ],
+            const Divider(height: 60),
+            Container(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // TODO obter ano atual
+                  Text(
+                    '© 2022 Dribbble. All rights reserved',
+                    style: TextStyle(color: Colors.grey.shade700),
+                  ),
+                  const SizedBox(height: 6),
+                  SvgPicture.asset('assets/images/logo_icon.svg', width: 24, height: 24),
+                  const SizedBox(height: 6),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('19,120,250', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                      const SizedBox(width: 4),
+                      Text('shots dribbbled', style: TextStyle(color: Colors.grey.shade700)),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),

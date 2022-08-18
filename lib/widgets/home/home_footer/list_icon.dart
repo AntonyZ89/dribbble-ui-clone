@@ -6,15 +6,19 @@ class ListIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 14,
-      children: [
-        SvgPicture.asset('assets/icon/dribbble.svg', width: 18, height: 18),
-        SvgPicture.asset('assets/icon/twitter.svg', width: 18, height: 18),
-        SvgPicture.asset('assets/icon/facebook.svg', width: 18, height: 18),
-        SvgPicture.asset('assets/icon/instagram.svg', width: 18, height: 18),
-        SvgPicture.asset('assets/icon/pinterest.svg', width: 18, height: 18),
-      ],
+    return Container(
+      height: 70,
+      alignment: Alignment.centerLeft,
+      child: Wrap(
+        spacing: 14,
+        children: [
+          SvgPicture.asset('assets/icon/dribbble.svg', width: 18, height: 18),
+          SvgPicture.asset('assets/icon/twitter.svg', width: 18, height: 18),
+          SvgPicture.asset('assets/icon/facebook.svg', width: 18, height: 18),
+          SvgPicture.asset('assets/icon/instagram.svg', width: 18, height: 18),
+          SvgPicture.asset('assets/icon/pinterest.svg', width: 18, height: 18),
+        ],
+      ),
     );
   }
 }

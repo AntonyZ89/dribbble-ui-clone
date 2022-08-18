@@ -17,15 +17,19 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: toggleMenu,
         icon: const Icon(Icons.menu, color: Colors.grey),
       ),
-      actions: const [
+      actions: [
         Padding(
-          padding: EdgeInsets.only(right: 16.0),
+          padding: const EdgeInsets.only(right: 16.0),
           child: Center(
-            child: Text(
+              child: TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
+            child: const Text(
               'Sign In',
               style: TextStyle(fontSize: 15, color: Colors.grey),
             ),
-          ),
+          )),
         ),
       ],
     );
