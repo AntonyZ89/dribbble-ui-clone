@@ -12,7 +12,8 @@ class HomeHeaderWidget extends StatelessWidget {
 
     return Stack(
       children: [
-        BackgroundVideo(height: height),
+        // FIXME performance issue on mobile
+        // BackgroundVideo(height: height),
         Container(
           color: Colors.black.withOpacity(0.6),
           height: height,
