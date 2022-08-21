@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/routes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,7 +24,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Center(
               child: TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/login');
+              Navigator.pushNamed(context, Routes.login);
             },
             child: const Text(
               'Sign In',

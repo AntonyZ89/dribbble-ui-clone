@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/routes.dart';
 import 'package:flutter_application/widgets/login/login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,7 +9,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: _Body()),
+      body: SafeArea(child: SingleChildScrollView(child: _Body())),
+      resizeToAvoidBottomInset: true,
     );
   }
 }
@@ -26,7 +28,12 @@ class _Body extends StatelessWidget {
           Container(
             height: 100,
             alignment: Alignment.centerLeft,
-            child: SvgPicture.asset('assets/images/logo.svg'),
+            child: GestureDetector(
+              child: SvgPicture.asset('assets/images/logo.svg'),
+              onTap: () {
+                Navigator.of(context).pushNamed(Routes.home);
+              },
+            ),
           ),
           const Text(
             'Sign in to Dribbble',

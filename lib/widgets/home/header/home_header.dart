@@ -34,7 +34,7 @@ class HomeHeaderWidget extends StatelessWidget {
           bottom: 12,
           right: 12,
           child: Text(
-            '@antonyz_',
+            '@antonyz89',
             style: TextStyle(color: Colors.grey),
           ),
         )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/routes.dart';
 
 class GoogleLoginButton extends StatelessWidget {
   const GoogleLoginButton({Key? key}) : super(key: key);
@@ -8,9 +9,15 @@ class GoogleLoginButton extends StatelessWidget {
     return Expanded(
       flex: 4,
       child: MaterialButton(
+        // TODO use button without elevation by default
+        focusElevation: 0,
+        hoverElevation: 0,
+        highlightElevation: 0,
         padding: const EdgeInsets.all(2),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(Routes.home);
+        },
         color: Colors.blue.shade600,
         textColor: Colors.white,
         child: Row(
