@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/mock/mock.dart';
 import 'package:flutter_application/widgets/widgets.dart';
 
-class HomeHeaderTop extends StatelessWidget {
-  HomeHeaderTop({Key? key}) : super(key: key);
+class HomeHeaderTop extends StatefulWidget {
+  const HomeHeaderTop({Key? key}) : super(key: key);
 
-  final List<String> tags = [
-    'Discover',
-    'Animation',
-    'Branding',
-    'Illustration',
-    'Mobile',
-    'Print',
-    'Product Design',
-    'Typography',
-    'Web Design'
-  ];
+  @override
+  State<HomeHeaderTop> createState() => _HomeHeaderTopState();
+}
+
+class _HomeHeaderTopState extends State<HomeHeaderTop> {
+  final List<String> _tags = HomeHeaderList.list();
+  int? _selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +20,21 @@ class HomeHeaderTop extends StatelessWidget {
       height: 40,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: tags.length,
+        itemCount: _tags.length,
         itemBuilder: (BuildContext context, int index) {
           return Tag(
-            text: tags[index],
-            active: index == 0,
+            text: _tags[index],
+            active: index == _selectedIndex,
+            onTap: () => updateIndex(index),
+            onEnter: (e) => updateIndex(index),
           );
         },
         separatorBuilder: (BuildContext context, int index) => const SizedBox(width: 8),
       ),
     );
+  }
+
+  void updateIndex(int index) {
+    setState(() => _selectedIndex = index);
   }
 }

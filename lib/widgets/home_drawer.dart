@@ -11,6 +11,7 @@ class HomeDrawer extends StatefulWidget {
 
 class _HomeDrawerState extends State<HomeDrawer> {
   final List<int> _selectedIndexes = [];
+  final List<DrawerListItem> menuItems = DrawerList.list();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       _selectedIndexes.remove(panelIndex);
                     }
                   }),
-                  children: DrawerList.list().asMap().entries.map<ExpansionPanel>((MapEntry<int, DrawerListItem> item) {
+                  children: menuItems.asMap().entries.map<ExpansionPanel>((MapEntry<int, DrawerListItem> item) {
                     int currentIndex = item.key;
                     String title = item.value.title;
                     List<String> subitems = item.value.items;

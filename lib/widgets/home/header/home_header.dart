@@ -24,7 +24,7 @@ class HomeHeaderWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              HomeHeaderTop(),
+              const HomeHeaderTop(),
               const HomeHeaderMid(),
               const HomeHeaderSearchBar(),
               TrendingSearchList(),
