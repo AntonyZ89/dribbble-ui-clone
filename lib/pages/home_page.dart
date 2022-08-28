@@ -6,14 +6,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const MyAppBar(),
+    return const Scaffold(
+      appBar: CustomAppBar(),
+      drawer: HomeDrawer(),
+      drawerScrimColor: Colors.transparent,
       body: _Body(),
     );
   }
 }
 
 class _Body extends StatelessWidget {
+  const _Body({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Center(

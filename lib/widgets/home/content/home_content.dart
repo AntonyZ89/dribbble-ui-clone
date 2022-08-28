@@ -11,9 +11,9 @@ class HomeContentWidget extends StatelessWidget {
       child: Column(
         children: [
           const ContentToolbar(),
-          const SizedBox(height: 8),
           ListView.separated(
             shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => ContentCard(index: index),
             separatorBuilder: (context, index) => const SizedBox(height: 8),
             itemCount: 5,

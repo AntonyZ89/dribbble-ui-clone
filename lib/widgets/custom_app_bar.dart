@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/routes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBar({Key? key}) : super(key: key);
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       elevation: 1,
@@ -15,7 +16,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: SvgPicture.asset('assets/images/logo.svg'),
       ),
       leading: IconButton(
-        onPressed: toggleMenu,
+        onPressed: () => toggleMenu(context),
         icon: const Icon(Icons.menu, color: Colors.grey),
       ),
       actions: [
@@ -36,8 +37,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  void toggleMenu() {
-    // TODO implement
+  void toggleMenu(BuildContext context) {
+    Scaffold.of(context).openDrawer();
   }
 
   @override
