@@ -12,7 +12,12 @@ class HomeContentWidget extends StatelessWidget {
         children: [
           const ContentToolbar(),
           const SizedBox(height: 8),
-          for (int i = 0; i < 5; i++) ...[const ContentCard(), if (i < 4) const SizedBox(height: 8)],
+          ListView.separated(
+            shrinkWrap: true,
+            itemBuilder: (context, index) => ContentCard(index: index),
+            separatorBuilder: (context, index) => const SizedBox(height: 8),
+            itemCount: 5,
+          ),
           const ContentFooter()
         ],
       ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/widgets/home/content/card/detail/toolbar_detail.dart';
-import 'package:flutter_application/widgets/home/content/card/detail/user_detail/user_detail.dart';
+import 'toolbar_detail.dart';
+import 'user_detail/user_detail.dart';
 
 class CardDetail extends StatelessWidget {
-  const CardDetail({Key? key}) : super(key: key);
+  final int index;
+
+  const CardDetail({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +41,13 @@ class CardDetail extends StatelessWidget {
                   ],
                 ),
               ),
-              Image.asset(
-                'assets/placeholder/400x300.png',
-                width: double.infinity,
-                fit: BoxFit.fitWidth,
+              Hero(
+                tag: 'card-image-$index',
+                child: Image.asset(
+                  'assets/placeholder/400x300.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
               ),
               const SizedBox(height: 20),
               Padding(

@@ -4,23 +4,28 @@ import './card_footer.dart';
 import './card_header.dart';
 
 class ContentCard extends StatelessWidget {
-  const ContentCard({Key? key}) : super(key: key);
+  final int index;
+
+  const ContentCard({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         // TODO add animation to top
-        showGeneralDialog(
-          context: context,
-          pageBuilder: (context, animation, secondaryAnimation) => const CardDetail(),
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CardDetail(index: index),
+            fullscreenDialog: true,
+          ),
         );
       },
       child: Column(
-        children: const [
-          CardHeader(),
-          SizedBox(height: 8),
-          CardFooter(),
+        children: [
+          CardHeader(index: index),
+          const SizedBox(height: 8),
+          const CardFooter(),
         ],
       ),
     );
