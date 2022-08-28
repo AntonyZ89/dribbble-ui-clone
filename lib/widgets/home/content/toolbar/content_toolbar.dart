@@ -19,8 +19,7 @@ class _ContentToolbarState extends State<ContentToolbar> {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      runSpacing: 26,
+    return Column(
       children: [
         SizedBox(
           height: 40,
@@ -28,12 +27,19 @@ class _ContentToolbarState extends State<ContentToolbar> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              DropdownList(),
+              const DropdownList(),
               FilterListButton(onPressed: toggleList, active: _opened),
             ],
           ),
         ),
-        if (_opened) const FilterList()
+        const SizedBox(height: 16),
+        AnimatedSize(
+          duration: const Duration(milliseconds: 200),
+          child: SizedBox(
+            height: _opened ? 500 : 0,
+            child: const FilterList(),
+          ),
+        ),
       ],
     );
   }
